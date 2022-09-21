@@ -14,9 +14,11 @@ services:
       # - MYSQL_PASSWORD=user-svc-password
     entrypoint:
       sh -c "
-      #echo 'CREATE DATABASE IF NOT EXISTS student_svc;' > /docker-entrypoint-initdb.d/init.sql;
       /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8 --collation-server=utf8_general_ci "
-
+    # entrypoint:
+    #   sh -c "
+    #   echo 'CREATE DATABASE IF NOT EXISTS user_svc;' > /docker-entrypoint-initdb.d/init.sql;
+    #   /usr/local/bin/docker-entrypoint.sh --character-set-server=utf8 --collation-server=utf8_general_ci "
 
   phpmyadmin:
     depends_on:
